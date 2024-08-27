@@ -4,9 +4,10 @@ const cors = require("cors");
 const studentRoutes = require("./routes/studentRoutes");
 const attendanceRoutes = require("./routes/attendanceRoutes");
 const internRoutes = require("./routes/internRoutes");
-const projectRoutes = require('./routes/projectRoutes');
+const reportSheetRoutes = require('./routes/reportSheetRoutes');
 const feesRoutes = require('./routes/feesRoutes'); // Import fees routes
 const chartRoutes = require('./routes/chartRoutes');
+const certificatesRoutes = require('./routes/certificatesRoutes');
 
 
 const app = express();
@@ -23,9 +24,10 @@ app.use("/uploads", express.static("uploads"));
 app.use("/api/students", studentRoutes);
 app.use("/api/attendance", attendanceRoutes);
 app.use("/api/interns", internRoutes);
-app.use('/api/projects', projectRoutes);
+app.use('/api/report-sheets', reportSheetRoutes);
 app.use('/api/fees', feesRoutes); // Add fees routes
 app.use('/api', chartRoutes);
+app.use('/api/certificates', certificatesRoutes);
 
 // Connect to MongoDB
 mongoose

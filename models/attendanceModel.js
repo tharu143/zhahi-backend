@@ -4,18 +4,17 @@ const attendanceSchema = new mongoose.Schema({
   studentId: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'Student',
-    required: true
+    required: true,
   },
   date: {
-    type: Date,
-    required: true
+    type: String, // Store date as YYYY-MM-DD
+    required: true,
   },
   status: {
     type: String,
-    enum: ['present', 'absent'],
-    required: true
-  }
+    enum: ['Present', 'Absent', 'OD', 'Holiday'],
+    required: true,
+  },
 }, { timestamps: true });
 
-const Attendance = mongoose.model('Attendance', attendanceSchema);
-module.exports = Attendance;
+module.exports = mongoose.model('Attendance', attendanceSchema);

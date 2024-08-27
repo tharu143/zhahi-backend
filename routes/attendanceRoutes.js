@@ -2,9 +2,10 @@ const express = require('express');
 const router = express.Router();
 const attendanceController = require('../controllers/attendanceController');
 
-router.get('/', attendanceController.getAllRecords);
-router.post('/', attendanceController.createRecord);
-router.put('/:id', attendanceController.updateRecord);
-router.delete('/:id', attendanceController.deleteRecord);
+// Route to search for students
+router.get('/search-student', attendanceController.searchStudent);
+
+// Route to update attendance
+router.put('/update-attendance', attendanceController.updateAttendance);
 
 module.exports = router;

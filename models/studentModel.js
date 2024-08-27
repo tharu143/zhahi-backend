@@ -3,10 +3,14 @@ const mongoose = require("mongoose");
 const studentSchema = new mongoose.Schema({
   studentId: { type: String, required: true, unique: true },
   name: String,
-  department: String,
+  collegeName: String,
   degree: String,
-  aadharNo: String,
-  dob: Date,
+  passedOut: String,
+  address: String,
+  batch: String, // Morning or Evening
+  courseName: String,
+  dateOfJoining: Date,
+  mode: String, // true for Online, false for Offline
   phoneNo: String,
   mailId: String,
   linkedinId: String,
